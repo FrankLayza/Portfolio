@@ -1,10 +1,31 @@
 import { motion } from "framer-motion";
+import Budget from "../assets/images/budget.png";
 
-const colors = [
-  ["from-[#edec16]", "via-[#635a33]", "to-[#aa7519]"],
-  ["from-[#53ab9c]", "via-[#a6d78a]", "to-[#7ab078]"],
-  ["from-[#93be4a]", "via-[#9fbf41]", "to-[#d7c011]"],
-  ["from-[#111928]", "via-[#3e566a]", "to-[#9cb8ca]"],
+const projects = [
+  {
+    title: "BudgetWise",
+    image: Budget,
+    repo: "https://github.com/FrankLayza/BudgetWise",
+    gradient: ["from-[#53ab9c]", "via-[#a6d78a]", "to-[#7ab078]"],
+  },
+  {
+    title: "Coming Soon",
+    image: null,
+    repo: "#",
+    gradient: ["from-[#93be4a]", "via-[#9fbf41]", "to-[#d7c011]"],
+  },
+  {
+    title: "Coming Soon",
+    image: null,
+    repo: "#",
+    gradient: ["from-[#111928]", "via-[#3e566a]", "to-[#9cb8ca]"],
+  },
+  {
+    title: "Coming Soon",
+    image: null,
+    repo: "#",
+    gradient: ["from-[#edec16]", "via-[#635a33]", "to-[#aa7519]"],
+  },
 ];
 
 const cardVariants = {
@@ -32,7 +53,7 @@ const Projects = () => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-          {colors.map((colorSet, i) => (
+          {projects.map((project, i) => (
             <motion.div
               key={i}
               custom={i}
@@ -40,10 +61,36 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={cardVariants}
-              className={`cursor-pointer w-full aspect-[16/10] border-none rounded-2xl bg-gradient-to-br ${colorSet.join(
+              className={`relative group cursor-pointer w-full aspect-[16/10] rounded-2xl bg-gradient-to-br ${project.gradient.join(
                 " "
               )} transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl`}
-            />
+            >
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 flex flex-col justify-end p-4 z-10"
+              >
+                <h3 className="text-stone-800 text-lg font-semibold drop-shadow-md">
+                  {project.title}
+                </h3>
+                <span className="text-white text-sm opacity-75 underline mt-1">
+                  View Repo →
+                </span>
+              </a>
+
+              {project.image ? (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="max-w-[90%] max-h-[90%] object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
+                  />
+                </div>
+              ) : (
+                <div className="absolute inset-0" />
+              )}
+            </motion.div>
           ))}
         </div>
       </div>
