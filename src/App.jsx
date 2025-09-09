@@ -1,13 +1,18 @@
 // import { Button } from "@/components/ui/button"
-
-import Page from "./Page";
-import  {ThemeProvider}  from "@/components/theme-provider";
+import GrainBackground from "./components/GrainyBackground";
+import Navbar from "@/components/Navbar";
+import Home from "./components/Home";
+// import Page from "./Page";
+import { ThemeProvider } from "@/components/theme-provider";
 
 function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Page />
+        <GrainBackground />
+        <Navbar />
+        {/* <Page /> */}
+        <Home />
       </ThemeProvider>
     </>
   );
