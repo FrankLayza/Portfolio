@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Budget from "../assets/images/budget.png";
+import Nexus from "../assets/images/nft-nexus.png";
 
 const projects = [
   {
@@ -9,9 +10,9 @@ const projects = [
     gradient: ["from-[#53ab9c]", "via-[#a6d78a]", "to-[#7ab078]"],
   },
   {
-    title: "Coming Soon",
-    image: null,
-    repo: "#",
+    title: "NFT-Nexus",
+    image: Nexus,
+    repo: "https://github.com/FrankLayza/nft-nexus",
     gradient: ["from-[#93be4a]", "via-[#9fbf41]", "to-[#d7c011]"],
   },
   {
