@@ -11,6 +11,11 @@ const projects = [
       "A replica of a budget tracking UI design, meant to help users track their spendings",
     link: "https://github.com/FrankLayza/BudgetWise",
     image: Budget,
+    details: [
+        "A responsive sidebar + layout with Tailwind CSS.",
+        "A dashboard to track expenses/income",
+        "Simplifies personal budgeting and financial insights"
+    ]
   },
   {
     title: "NFT-NEXUS",
@@ -18,6 +23,11 @@ const projects = [
       "An AI-Powered NFT analyzer, fetches NFTs from NFT Alchemy, analyses the NFT based on certain attributes",
     link: "https://github.com/FrankLayza/nft-nexus",
     image: Nexus,
+    details: [
+        "Modular filtering by rarity, collection, and blockchain",
+        "Provides insights for NFT collectors & investors",
+        "Scalable design for easy integration of new blockchains"
+    ]
   },
 ];
 
@@ -46,16 +56,22 @@ const Home = () => {
 
         <section className="container mx-auto px-7 py-16">
           <h2 className="text-4xl">Notable Projects</h2>
-          <div>
+          <div className="py-6">
             {projects.map((project, i) => (
-                <div key={i}>
-                    
+                <div className="px-3" key={i}>
+                    <Project
+                        image={project.image}
+                        title={project.title}
+                        link={project.link}
+                        description={project.description}
+                        details={project.details}
+                    />
                 </div>
             ))}
           </div>
         </section>
       </div>
-    </>
+    </> 
   );
 };
 

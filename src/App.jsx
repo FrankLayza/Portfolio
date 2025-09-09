@@ -11,7 +11,6 @@ function App() {
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <GrainBackground />
         <Navbar />
-        {/* <Page /> */}
         <Home />
       </ThemeProvider>
     </>
