@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Home from "./components/Home";
 // import Page from "./Page";
 import { ThemeProvider } from "@/components/theme-provider";
+import TechStack from "./components/TechStack";
 
 function App() {
   return (

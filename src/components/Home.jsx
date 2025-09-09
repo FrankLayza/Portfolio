@@ -3,6 +3,7 @@ import Project from "@/components/Project-card";
 import { Github } from "lucide-react";
 import Budget from "@/assets/images/budget.png";
 import Nexus from "@/assets/images/nft-nexus.png";
+import TechStack from "./TechStack";
 
 const projects = [
   {
@@ -12,10 +13,11 @@ const projects = [
     link: "https://github.com/FrankLayza/BudgetWise",
     image: Budget,
     details: [
-        "A responsive sidebar + layout with Tailwind CSS.",
-        "A dashboard to track expenses/income",
-        "Simplifies personal budgeting and financial insights"
-    ]
+      "A responsive sidebar + layout with Tailwind CSS.",
+      "A dashboard to track expenses/income",
+      "Simplifies personal budgeting and financial insights",
+    ],
+    tags: ["React", "Tailwind CSS"],
   },
   {
     title: "NFT-NEXUS",
@@ -24,10 +26,11 @@ const projects = [
     link: "https://github.com/FrankLayza/nft-nexus",
     image: Nexus,
     details: [
-        "Modular filtering by rarity, collection, and blockchain",
-        "Provides insights for NFT collectors & investors",
-        "Scalable design for easy integration of new blockchains"
-    ]
+      "Modular filtering by rarity, collection, and blockchain",
+      "Provides insights for NFT collectors & investors",
+      "Scalable design for easy integration of new blockchains",
+    ],
+    tags: ["React", "Tailwind CSS", "Express", "HuggingFace"],
   },
 ];
 
@@ -47,31 +50,40 @@ const Home = () => {
               smarter and more effective
             </p>
             <div>
-              <Button size="lg">
-                <Github /> Github
-              </Button>
+              <a href="https://github.com/FrankLayza">
+                <Button size="lg">
+                  <Github /> Github
+                </Button>
+              </a>
             </div>
           </div>
         </div>
 
         <section className="container mx-auto px-7 py-16">
-          <h2 className="text-4xl">Notable Projects</h2>
+          <h2 className="text-4xl font-bold mt-8 pt-8">Notable Projects</h2>
           <div className="py-6">
             {projects.map((project, i) => (
-                <div className="px-3" key={i}>
-                    <Project
-                        image={project.image}
-                        title={project.title}
-                        link={project.link}
-                        description={project.description}
-                        details={project.details}
-                    />
-                </div>
+              <div className="px-3" key={i}>
+                <Project
+                  image={project.image}
+                  title={project.title}
+                  link={project.link}
+                  description={project.description}
+                  details={project.details}
+                />
+              </div>
             ))}
           </div>
         </section>
+
+        <section className="container mx-auto px-7 py-16">
+          <h2 className="text-4xl font-bold mt-8 pt-8">TECH STACK</h2>
+          <div className="py-6">
+            <TechStack />
+          </div>
+        </section>
       </div>
-    </> 
+    </>
   );
 };
 
