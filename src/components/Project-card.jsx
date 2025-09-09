@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Github } from "lucide-react";
-const Projects = ({ image, title, description, link, tags }) => {
+const Projects = ({ image, title, description, link, }) => {
   return (
     <>
       <div>
