@@ -37,7 +37,7 @@ const projects = [
 const Home = () => {
   return (
     <>
-      <div className="w-full min-h-screen pt-10 pb-16 text-foreground items-center">
+      <div className="w-full min-h-screen pt-10 pb-16 text-foreground items-center font-fira">
         <section
           id="home"
           className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-8 grid grid-cols-1 md:grid-cols-2 w-full gap-5 items-center scroll-mt-5"
@@ -101,6 +101,34 @@ const Home = () => {
             <TechStack />
           </div>
         </section>
+
+        <section>
+          <h2>Contact</h2>
+
+          <div>
+            <h3>Quick Links</h3>
+            <ul>
+              <li>Home</li>
+              <li>Projects</li>
+              <li>Skills</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Social Links</h3>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </section>
+
+        <footer className="text-center text-sm text-zinc-400">
+          Built by <span>Frank Anthony</span> With React v19, Shadcn
+          UI(TailwindCSS v4.1.13)
+        </footer>
       </div>
     </>
   );

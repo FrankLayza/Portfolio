@@ -5,7 +5,7 @@ const Projects = ({ image, title, description, link, details, tags }) => {
     <>
       <div className="flex justify-center items-center">
         <Card className="max-w-4xl overflow-hidden border-2 border-zinc-700 grid grid-cols-1 md:grid-cols-2">
-          <CardContent className="px-6">
+          <CardContent className="px-6 py-4">
             <h2 className="text-3xl font-bold">{title}</h2>
             <p className="mt-5 text-sm leading-tight text-gray-400">
               {description}
@@ -18,7 +18,7 @@ const Projects = ({ image, title, description, link, details, tags }) => {
                     className="text-sm text-zinc-500 flex items-center my-2"
                   >
                     <CircleCheck className="shrink-0 mr-2" />
-                    <span className="whitespace-nowrap">{detail}</span>
+                    <span className="whitespace-break-spaces">{detail}</span>
                   </li>
                 ))}
             </ul>
@@ -45,6 +45,7 @@ const Projects = ({ image, title, description, link, details, tags }) => {
                 src={image}
                 className="object-contain w-full h-full"
                 alt={title}
+                loading="lazy"
               />
             </div>
           </CardContent>

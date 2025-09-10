@@ -8,17 +8,15 @@ const technologies = [
       "Next.js",
       "TypeScript",
       "TailwindCSS",
-      "Redux",
-      "GraphQL",
     ],
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"],
+    skills: ["Node.js", "Express", "Supabase", "MongoDB"],
   },
   {
     category: "Tools",
-    skills: ["VS Code", "Postman", "Figma", "Jest", "GitHub", "Vercel"],
+    skills: ["VS Code", "Postman", "Figma", "GitHub", "Vercel"],
   },
 ];
 

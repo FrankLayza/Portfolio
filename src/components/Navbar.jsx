@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 font-bold">
+      <nav className="fixed top-0 left-0 w-full z-50 font-bold font-fira">
         <div className="flex items-center justify-between max-w-2xl w-full mx-auto px-5 border border-[#313131] py-3 my-5 bg-[#262626] text-white rounded-4xl">
           <p className="text-xl">Frank Anthony</p>
 
@@ -33,24 +33,14 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <ModeToggle />
-
-          {/* <div className="hidden md:flex gap-3 items-center">
-            <button className="border rounded-3xl py-2 px-4 cursor-pointer">
-              Let's chat
-            </button>
-            <Moon
-              className="text-orange-400 p-3 rounded-full cursor-pointer"
-              size={40} // try 40px for "4xl-ish"
-            />
-          </div> */}
-          
-
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button className="p-1.5 cursor-pointer" onClick={toggler}>
-              <Menu className="text-3xl" />
-            </button>
+          <div className="md:flex md:justify-between items-center">
+            <ModeToggle />
+            {/* Mobile Menu Toggle */}
+            <div className="md:hidden">
+              <button className="p-1.5 cursor-pointer" onClick={toggler}>
+                <Menu className="text-3xl" />
+              </button>
+            </div>
           </div>
         </div>
 
