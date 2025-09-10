@@ -37,33 +37,49 @@ const projects = [
 const Home = () => {
   return (
     <>
-      <div className="w-full min-h-screen pt-32 pb-16 text-white items-center">
-        <div className="container mx-auto px-7 py-8 grid grid-cols-1 md:grid-cols-2 w-full gap-5">
+      <div className="w-full min-h-screen pt-10 pb-16 text-foreground items-center">
+        <section
+          id="home"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-8 grid grid-cols-1 md:grid-cols-2 w-full gap-5 items-center scroll-mt-5"
+        >
           <div className="flex flex-col gap-5">
-            <h2 className="text-5xl leading-snug font-bold">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-snug font-bold">
               Building Web Apps & Dev Tools That Supercharge Productivity
             </h2>
-            <p>
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg">
               Hi, I'm Anthony Frank - a Full Stack Developer with focus on
               building user-friendly interfaces, integrating API to web services
               and lately, I've been exploring how AI can make developers faster,
               smarter and more effective
             </p>
             <div>
-              <a href="https://github.com/FrankLayza">
+              <a
+                href="https://github.com/FrankLayza"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg">
                   <Github /> Github
                 </Button>
               </a>
             </div>
           </div>
-        </div>
+        </section>
 
-        <section className="container mx-auto px-7 py-16">
-          <h2 className="text-4xl font-bold mt-8 pt-8">Notable Projects</h2>
-          <div className="py-6">
+        <section
+          id="projects"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-28"
+        >
+          {/* Heading outside the map */}
+          <h2 className="text-4xl font-bold mb-8">Notable Projects</h2>
+
+          <div className="space-y-12">
             {projects.map((project, i) => (
-              <div className="px-3" key={i}>
+              <div
+                key={i}
+                // no min-h-screen, no sticky
+                className="px-0 sm:px-3"
+              >
                 <Project
                   image={project.image}
                   title={project.title}
@@ -76,7 +92,10 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="container mx-auto px-7 py-16">
+        <section
+          id="skills"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-28"
+        >
           <h2 className="text-4xl font-bold mt-8 pt-8">TECH STACK</h2>
           <div className="py-6">
             <TechStack />

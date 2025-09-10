@@ -3,8 +3,8 @@ import { Github, CircleCheck } from "lucide-react";
 const Projects = ({ image, title, description, link, details, tags }) => {
   return (
     <>
-      <div className="flex justify-center items-center sticky top-[300px]">
-        <Card className="max-w-4xl overflow-hidden border-2 my-4 py-8 border-zinc-700 grid grid-cols-1 md:grid-cols-2 sticky top-[300px]">
+      <div className="flex justify-center items-center">
+        <Card className="max-w-4xl overflow-hidden border-2 border-zinc-700 grid grid-cols-1 md:grid-cols-2">
           <CardContent className="px-6">
             <h2 className="text-3xl font-bold">{title}</h2>
             <p className="mt-5 text-sm leading-tight text-gray-400">

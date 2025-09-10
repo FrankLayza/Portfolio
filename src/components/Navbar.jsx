@@ -1,5 +1,4 @@
 import { Link } from "react-scroll";
-import { Moon } from "lucide-react";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import {ModeToggle} from "@/components/toggle-mode"
