@@ -42,7 +42,7 @@ const Home = () => {
       <main className="flex-1 pt-10 pb-16 text-foreground items-center">
         <section
           id="home"
-          className="mx-auto px-4 sm:px-6 lg:px-8 min-h-screen grid grid-cols-1 md:grid-cols-2 w-full gap-5 items-center"
+          className="mx-auto px-4 sm:px-6 lg:px-8 min-h-screen grid grid-cols-1 md:grid-cols-2 w-full gap-5 items-center bg-background"
         >
           <div className="flex flex-col gap-5">
             <h2 className="text-3xl sm:text-4xl md:text-5xl leading-tight md:leading-snug font-bold">
@@ -70,7 +70,9 @@ const Home = () => {
 
         <section
           id="projects"
-          className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-20"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-20 
+         
+            bg-[linear-gradient(98.032deg,#4444440f,#80008005_27%,#aaaaaa1c_42%,#6666661a)]"
         >
           {/* Heading outside the map */}
           <h2 className="text-4xl font-bold mb-8">Notable Projects</h2>
@@ -92,7 +94,7 @@ const Home = () => {
 
         <section
           id="skills"
-          className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-28"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-28 "
         >
           <h2 className="text-4xl font-bold mt-8 pt-8">TECH STACK</h2>
           <div className="py-6">
@@ -160,7 +162,7 @@ const Home = () => {
           </div>
         </div>
 
-        <Separator className="my-6" /> 
+        <Separator className="my-6" />
         <div className="text-center text-sm my-5 text-zinc-400">
           Built by <span>Frank Anthony</span> With React v19, Shadcn
           UI(TailwindCSS v4.1.13)

@@ -6,41 +6,47 @@ import { useCallback } from "react";
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
+  // Determine actual theme
   const prefersDark =
     typeof window !== "undefined" &&
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  const effectiveTheme = theme === "system" ? (prefersDark ? "dark" : "light") : theme;
+  const effectiveTheme =
+    theme === "system" ? (prefersDark ? "dark" : "light") : theme;
 
   const toggleTheme = useCallback(() => {
-    try {
-      const next = effectiveTheme === "light" ? "dark" : "light";
-      setTheme(next);
-    } catch {
-      setTheme(theme === "light" ? "dark" : "light");
-    }
-  }, [effectiveTheme, theme, setTheme]);
+    const next = effectiveTheme === "light" ? "dark" : "light";
+    setTheme(next);
+  }, [effectiveTheme, setTheme]);
 
   return (
     <Button
       variant="outline"
       size="icon"
-      className="rounded-full cursor-pointer relative"
       onClick={toggleTheme}
       aria-label="Toggle theme"
       title="Toggle theme"
+      className="relative rounded-full cursor-pointer overflow-hidden"
     >
+      {/* Sun */}
       <Sun
-        className={`h-[1.2rem] w-[1.2rem] transition-all ${
-          effectiveTheme === "light" ? "scale-100 rotate-0" : "scale-0 rotate-90"
+        className={`h-[1.0rem] w-[1.0rem] transition-all text-black duration-300 ${
+          effectiveTheme === "light"
+            ? "opacity-100 rotate-0 scale-100"
+            : "opacity-0 rotate-90 scale-0"
         }`}
       />
+
+      {/* Moon */}
       <Moon
-        className={`absolute h-[1.2rem] w-[1.2rem] transition-all ${
-          effectiveTheme === "dark" ? "scale-100 rotate-0" : "scale-0 rotate-90"
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[1.0rem] w-[1.0rem] transition-all duration-300 ${
+          effectiveTheme === "dark"
+            ? "opacity-100 rotate-0 scale-100"
+            : "opacity-0 rotate-90 scale-0"
         }`}
       />
+
       <span className="sr-only">Toggle theme</span>
     </Button>
   );

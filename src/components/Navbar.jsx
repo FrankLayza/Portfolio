@@ -12,22 +12,22 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 font-bold font-fira">
-        <div className="flex items-center justify-between max-w-2xl w-full mx-auto px-5 border border-[#313131] py-3 my-5 bg-[#262626] text-white rounded-4xl">
+        <div className="flex items-center justify-between max-w-2xl w-full mx-auto px-5 border border-[#313131] py-1.5 my-5 bg-[#262626] text-white rounded-4xl">
           <p className="text-xl">Frank Anthony</p>
 
           {/* Desktop Nav */}
           <ul className="hidden md:flex gap-6 px-5">
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:underline">
               <Link to="home" smooth={true} duration={500} offset={0} >
                 Home
               </Link>
             </li>
-            <li className="cursor-pointer px-4 hover:bg-gray-700 rounded-2xl">
+            <li className="cursor-pointer px-4 hover:underline rounded-2xl">
               <Link to="projects" smooth={true} duration={500}>
                 Projects
               </Link>
             </li>
-            <li className="cursor-pointer">
+            <li className="cursor-pointer hover:underline">
               <Link to="skills" smooth={true} duration={500}>
                 Skills
               </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
         {open && (
           <div className="md:hidden bg-[#262626] text-white py-6 px-5 rounded-2xl mx-5 border border-[#313131] animate-slideDown">
             <ul className="flex flex-col gap-4 text-lg">
-              <li>
+              <li className="cursor-pointer hover:underline">
                 <Link
                   to="home"
                   smooth={true}
@@ -58,7 +58,7 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li>
+              <li className="cursor-pointer hover:underline">
                 <Link
                   to="projects"
                   smooth={true}
@@ -68,9 +68,9 @@ const Navbar = () => {
                   Projects
                 </Link>
               </li>
-              <li>
+              <li className="cursor-pointer hover:underline">
                 <Link
-                  to="skill"
+                  to="skills"
                   smooth={true}
                   duration={500}
                   onClick={closeMenu}
