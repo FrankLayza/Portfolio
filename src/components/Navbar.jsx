@@ -18,7 +18,7 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <ul className="hidden md:flex gap-6 px-5">
             <li className="cursor-pointer">
-              <Link to="home" smooth={true} duration={500}>
+              <Link to="home" smooth={true} duration={500} offset={0} >
                 Home
               </Link>
             </li>
@@ -33,7 +33,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <div className="md:flex md:justify-between items-center">
+          <div className="flex justify-between items-center">
             <ModeToggle />
             {/* Mobile Menu Toggle */}
             <div className="md:hidden">
