@@ -1,45 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import Project from "@/components/Project-card";
+// import Project from "@/components/Project-card";
 import { Github, ArrowUpRight } from "lucide-react";
 import { Link } from "react-scroll";
-import Budget from "@/assets/images/budget.png";
-import Nexus from "@/assets/images/nft-nexus.png";
 import TechStack from "./TechStack";
+import ProjectPage from "./ProjectPage";
+import { GithubIcon } from "lucide-react";
 
-const projects = [
-  {
-    title: "BudgetWise",
-    description:
-      "A replica of a budget tracking UI design, meant to help users track their spendings",
-    link: "https://github.com/FrankLayza/BudgetWise",
-    image: Budget,
-    details: [
-      "A responsive sidebar + layout with Tailwind CSS.",
-      "A dashboard to track expenses/income",
-      "Simplifies personal budgeting and financial insights",
-    ],
-    tags: ["React", "Tailwind CSS"],
-  },
-  {
-    title: "NFT-NEXUS",
-    description:
-      "An AI-Powered NFT analyzer, fetches NFTs from NFT Alchemy, analyses the NFT based on certain attributes",
-    link: "https://github.com/FrankLayza/nft-nexus",
-    image: Nexus,
-    details: [
-      "Modular filtering by rarity, collection, and blockchain",
-      "Provides insights for NFT collectors & investors",
-      "Scalable design for easy integration of new blockchains",
-    ],
-    tags: ["React", "Tailwind CSS", "Express", "HuggingFace"],
-  },
-];
+
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen w-full font-fira">
-      <main className="flex-1 pt-10 pb-16 text-foreground items-center">
+    <div className="w-full font-fira">
+      <main className="pt-10 pb-16 text-foreground">
         <section
           id="home"
           className="mx-auto px-4 sm:px-6 lg:px-8 min-h-screen grid grid-cols-1 md:grid-cols-2 w-full gap-5 items-center bg-background"
@@ -68,31 +41,35 @@ const Home = () => {
           </div>
         </section>
 
-        <section
+        {/* Project display section */}
+        {/* <section
           id="projects"
           className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-20 
          
             bg-[linear-gradient(98.032deg,#4444440f,#80008005_27%,#aaaaaa1c_42%,#6666661a)]"
         >
-          {/* Heading outside the map */}
+         
           <h2 className="text-4xl font-bold mb-8">Notable Projects</h2>
 
           <div className="space-y-12">
             {projects.map((project, i) => (
               <div key={i} className="px-0 sm:px-3">
-                <Project
-                  image={project.image}
-                  title={project.title}
-                  link={project.link}
-                  description={project.description}
-                  details={project.details}
-                />
+                  <Project
+                    image={project.image}
+                    title={project.title}
+                    link={project.link}
+                    description={project.description}
+                    details={project.details}
+                  />
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
-        <section
+        {/* test project section */}
+          <ProjectPage />
+        {/* Skills section */}
+        {/* <section
           id="skills"
           className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen py-16 scroll-mt-28 "
         >
@@ -100,9 +77,9 @@ const Home = () => {
           <div className="py-6">
             <TechStack />
           </div>
-        </section>
+        </section> */}
       </main>
-      <footer
+      {/* <footer
         id="contact"
         className="mt-auto px-4 bg-[#030711] py-12 sm:px-6 lg:px-8 text-white"
       >
@@ -153,8 +130,17 @@ const Home = () => {
             </div>
             <div>
               <h3 className="text-xl font-semibold">Social Links</h3>
-              <ul>
-                <li></li>
+              <ul className="py-2">
+                <li className="flex pb-3">
+                  <ArrowUpRight className="mr-0.5 size-5" />
+                  <a
+                    href="https://github.com/FrankLayza"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="size-5" />
+                  </a>
+                </li>
                 <li></li>
                 <li></li>
               </ul>
@@ -167,7 +153,7 @@ const Home = () => {
           Built by <span>Frank Anthony</span> With React v19, Shadcn
           UI(TailwindCSS v4.1.13)
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
