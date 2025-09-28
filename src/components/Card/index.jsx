@@ -4,6 +4,8 @@ import { Github, CircleCheck } from "lucide-react";
 import {motion, useScroll, useTransform} from 'framer-motion'
 import { useRef } from "react";
 
+const MotionCard = motion(Card)
+
 const Index = ({progress, range, targetScale, i, title, description, color, image, link, details, tags }) => {
     const container = useRef(null)
     const {scrollYProgress} = useScroll({
@@ -14,7 +16,7 @@ const Index = ({progress, range, targetScale, i, title, description, color, imag
     const scale = useTransform(progress, range, [1, targetScale])
   return (
     <div ref={container} className="cardContainer overflow-hidden">
-      <Card
+      <MotionCard
         style={{scale, backgroundColor: color, top:  `calc(-10% + ${i * 25}px)` }}
         className="card border-zinc-700 border overflow-hidden"
       >
@@ -73,7 +75,7 @@ const Index = ({progress, range, targetScale, i, title, description, color, imag
             </motion.div>
           </div>
         </div>
-      </Card>
+      </MotionCard>
     </div>
   );
 };
