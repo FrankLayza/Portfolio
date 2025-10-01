@@ -14,7 +14,7 @@ export const projects = [
       "Simplifies personal budgeting and financial insights",
     ],
     tags: ["React", "Tailwind CSS"],
-    color: "#2d2d2d"
+    color: "#000814"
   },
   {
     title: "NFT-NEXUS",
@@ -28,7 +28,7 @@ export const projects = [
       "Scalable design for easy integration of new blockchains",
     ],
     tags: ["React", "Tailwind CSS", "Express", "HuggingFace"],
-    color: "#1f1f1f"
+    color: "#000814"
   },
   {
     title: "NFT-NEXUS",
@@ -42,7 +42,7 @@ export const projects = [
       "Scalable design for easy integration of new blockchains",
     ],
     tags: ["React", "Tailwind CSS", "Express", "HuggingFace"],
-    color: "#151515"
+    color: "#000814"
   },
   {
     title: "LAZYDOCS",
@@ -56,6 +56,6 @@ export const projects = [
       "Scalable design for easy integration of new blockchains",
     ],
     tags: ["React", "Tailwind CSS", "Express", "HuggingFace"],
-    color: "#2a2522"
+    color: "#000814"
   },
 ];

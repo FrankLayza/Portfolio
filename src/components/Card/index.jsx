@@ -1,29 +1,46 @@
 import "../Card/card.css";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Github, CircleCheck } from "lucide-react";
-import {motion, useScroll, useTransform} from 'framer-motion'
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-const MotionCard = motion(Card)
+const MotionCard = motion(Card);
 
-const Index = ({progress, range, targetScale, i, title, description, color, image, link, details, tags }) => {
-    const container = useRef(null)
-    const {scrollYProgress} = useScroll({
-        target: container,
-        offset: ['start end', 'start start']
-    })
-    const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
-    const scale = useTransform(progress, range, [1, targetScale])
+const Index = ({
+  progress,
+  range,
+  targetScale,
+  i,
+  title,
+  description,
+  color,
+  image,
+  link,
+  details,
+  tags,
+}) => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "start start"],
+  });
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(progress, range, [1, targetScale]);
+
   return (
     <div ref={container} className="cardContainer overflow-hidden">
       <MotionCard
-        style={{scale, backgroundColor: color, top:  `calc(-10% + ${i * 25}px)` }}
-        className="card border-zinc-700 border overflow-hidden"
+        style={{
+          scale,
+          backgroundColor: color,
+          top: `calc(-10% + ${i * 25}px)`,
+        }}
+        className="card max-w-4xl border-zinc-700 border overflow-hidden"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          <CardContent className="p-6 flex flex-col justify-between text-foreground">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-0">
+          <CardContent className="p-6 flex flex-col justify-between order-2 md:order-1">
             <div>
-              <h3 className="text-xl font-semibold">{title}</h3>
+              <h3 className="text-xl font-semibold text-foreground">{title}</h3>
               <p className="my-4 text-sm leading-tight text-gray-400">
                 {description}
               </p>
@@ -51,7 +68,7 @@ const Index = ({progress, range, targetScale, i, title, description, color, imag
                   ))}
               </div>
             </div>
-            <CardFooter className="py-4 text-foreground">
+            <CardFooter className="pt-4 text-foreground">
               <a
                 href={link}
                 target="_blank"
@@ -63,15 +80,17 @@ const Index = ({progress, range, targetScale, i, title, description, color, imag
               </a>
             </CardFooter>
           </CardContent>
-          {/* the right side of the grid */}
-
-          <div className="imageContainer">
-            <motion.div style={{opacity: scrollYProgress, scale: imageScale}} className="inner">
-                <img
-                  src={image}
-                  alt={title}
-                  className="absolute bottom-0 right-0 rounded w-full h-full"
-                />
+          {/* Image Section */}
+          <div className="imageContainer relative w-full h-full order-1 md:order-2">
+            <motion.div
+              style={{ opacity: scrollYProgress, scale: imageScale }}
+              className="w-full h-full"
+            >
+              <img
+                src={image}
+                alt={title}
+                className="object-cover w-full h-full rounded"
+              />
             </motion.div>
           </div>
         </div>
