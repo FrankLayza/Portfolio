@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 font-bold font-fira">
-        <div className="flex items-center justify-between max-w-2xl w-full mx-auto px-5 border border-[#313131] py-1.5 my-5 bg-[#262626] text-white rounded-4xl">
+        <div className="flex items-center justify-between max-w-2xl w-full mx-auto px-5 border bg-card py-1.5 my-5 text-foreground rounded-4xl">
           <p className="text-xl">Frank Anthony</p>
 
           {/* Desktop Nav */}
@@ -46,7 +46,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         {open && (
-          <div className="md:hidden bg-[#262626] text-white py-6 px-5 rounded-2xl mx-5 border border-[#313131] animate-slideDown">
+          <div className="md:hidden py-6 px-5 rounded-2xl mx-5 border bg-card text-foreground animate-slideDown">
             <ul className="flex flex-col gap-4 text-lg">
               <li className="cursor-pointer hover:underline">
                 <Link

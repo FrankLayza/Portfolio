@@ -21,7 +21,7 @@ const Index = ({progress, range, targetScale, i, title, description, color, imag
         className="card border-zinc-700 border overflow-hidden"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          <CardContent className="p-6 flex flex-col justify-between">
+          <CardContent className="p-6 flex flex-col justify-between text-foreground">
             <div>
               <h3 className="text-xl font-semibold">{title}</h3>
               <p className="my-4 text-sm leading-tight text-gray-400">
@@ -51,7 +51,7 @@ const Index = ({progress, range, targetScale, i, title, description, color, imag
                   ))}
               </div>
             </div>
-            <CardFooter className="py-4">
+            <CardFooter className="py-4 text-foreground">
               <a
                 href={link}
                 target="_blank"

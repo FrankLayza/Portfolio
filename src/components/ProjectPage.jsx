@@ -1,5 +1,4 @@
 import { projects } from "../lib/data";
-import "../global.css";
 import Card from "./Card/index";
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
@@ -23,7 +22,7 @@ const ProjectPage = () => {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <main ref={container} className="mt-[5vh] mb-[100vh]">
+    <main ref={container} className="mt-[5vh]">
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
         return (
