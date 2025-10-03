@@ -1,6 +1,8 @@
 import "../Card/card.css";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Github, CircleCheck } from "lucide-react";
+// import { Github, CircleCheck } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { FaRegCircleCheck } from "react-icons/fa6";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -50,7 +52,7 @@ const Index = ({
                       key={idx}
                       className="text-sm text-muted-foreground flex items-center my-2"
                     >
-                      <CircleCheck className="shrink-0 mr-2" />
+                      <FaRegCircleCheck className="shrink-0 mr-2" />
                       <span className="whitespace-break-spaces">{detail}</span>
                     </li>
                   ))}
@@ -74,7 +76,7 @@ const Index = ({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm hover:underline"
               >
-                <Github className="-ml-6 size-4" />
+                <FaGithub className="-ml-6 size-4" />
                 View on Github
               </a>
             </CardFooter>
