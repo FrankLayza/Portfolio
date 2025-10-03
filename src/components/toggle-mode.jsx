@@ -1,4 +1,5 @@
-import { Moon, Sun } from "lucide-react";
+// import { Moon, Sun } from "lucide-react";
+import {FaMoon, FaSun} from "react-icons"
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { useCallback } from "react";
@@ -30,7 +31,7 @@ export function ModeToggle() {
       className="relative rounded-full cursor-pointer overflow-hidden"
     >
       {/* Sun */}
-      <Sun
+      <FaSun
         className={`h-[1.0rem] w-[1.0rem] transition-all text-black duration-300 ${
           effectiveTheme === "light"
             ? "opacity-100 rotate-0 scale-100"
@@ -39,7 +40,7 @@ export function ModeToggle() {
       />
 
       {/* Moon */}
-      <Moon
+      <FaMoon
         className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[1.0rem] w-[1.0rem] transition-all duration-300 ${
           effectiveTheme === "dark"
             ? "opacity-100 rotate-0 scale-100"
