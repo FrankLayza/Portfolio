@@ -77,10 +77,10 @@ const Home = () => {
           <p className="text-[10px] md:text-sm">
             Best way to reach me is through:{" "}
             <a
-              href=""
+              href="mailto:frankez478@gmail.com"
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:underline"
+              className="hover:underline text-blue-600 dark:text-blue-400"
             >
               frankez478@gmail.com
             </a>
@@ -89,12 +89,9 @@ const Home = () => {
             href="https://t.me/deeznutz_00"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm hover:bg-colioorange/80"
+            className="inline-flex items-center gap-2 text-sm "
           >
-            <Button
-              className="bg-colioorange text-foreground flex items-center gap-2"
-              variant="ghost"
-            >
+            <Button className="bg-colioorange hover:bg-colioorange/80 text-foreground flex items-center gap-2">
               <FaTelegram className="size-5" />
               Telegram
             </Button>

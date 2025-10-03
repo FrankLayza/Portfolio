@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import { Menu } from "lucide-react";
+import { IoMenu } from "react-icons/io5";
 import { useState } from "react";
 import {ModeToggle} from "@/components/toggle-mode"
 
@@ -38,7 +38,7 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <div className="md:hidden">
               <button className="p-1.5 cursor-pointer" onClick={toggler}>
-                <Menu className="text-3xl" />
+                <IoMenu className="text-3xl" />
               </button>
             </div>
           </div>

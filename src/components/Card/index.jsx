@@ -26,22 +26,21 @@ const Index = ({
   });
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
-
+  
   return (
     <div ref={container} className="cardContainer overflow-hidden">
       <MotionCard
         style={{
           scale,
-          backgroundColor: color,
           top: `calc(-10% + ${i * 25}px)`,
         }}
-        className="card max-w-4xl border-zinc-700 border overflow-hidden"
+        className={`card max-w-3xl border-zinc-700 border overflow-hidden`}
       >
         <div className="flex flex-col md:grid md:grid-cols-2 gap-0">
-          <CardContent className="p-6 flex flex-col justify-between order-2 md:order-1">
+          <CardContent className={`p-6 flex flex-col justify-between order-2 md:order-1`}>
             <div>
-              <h3 className="text-xl font-semibold text-foreground">{title}</h3>
-              <p className="my-4 text-sm leading-tight text-gray-400">
+              <h3 className="text-xl font-semibold">{title}</h3>
+              <p className="my-4 text-sm leading-tight">
                 {description}
               </p>
               <ul className="my-5">
@@ -49,7 +48,7 @@ const Index = ({
                   details.map((detail, idx) => (
                     <li
                       key={idx}
-                      className="text-sm text-zinc-500 flex items-center my-2"
+                      className="text-sm text-muted-foreground flex items-center my-2"
                     >
                       <CircleCheck className="shrink-0 mr-2" />
                       <span className="whitespace-break-spaces">{detail}</span>

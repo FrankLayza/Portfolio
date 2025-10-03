@@ -22,7 +22,7 @@ const ProjectPage = () => {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <main ref={container} className="mt-[3vh] md:mt-[6vh]">
+    <main ref={container} className="mt-[3vh] md:mt-[4vh]">
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
         return (
