@@ -171,12 +171,9 @@ const Home = () => {
           id="projects"
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
         >
-          <div className="mb-10 text-left">
-            <span className="text-xs font-mono font-semibold text-[#729B7D] tracking-wider">
-              // WORK SHOWCASE
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mt-1 text-white">
-              Notable <span className="text-[#729B7D]">Projects</span>
+          <div className="mb-8 text-left">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-oxanium">
+              Selected Work
             </h2>
           </div>
 

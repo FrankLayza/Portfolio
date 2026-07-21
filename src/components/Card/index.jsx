@@ -1,102 +1,37 @@
-import "../Card/card.css";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-// import { Github, CircleCheck } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
-import { FaRegCircleCheck } from "react-icons/fa6";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 
-const MotionCard = motion(Card);
-
-const Index = ({
-  progress,
-  range,
-  targetScale,
-  i,
-  title,
-  description,
-  color,
-  image,
-  link,
-  details,
-  tags,
-}) => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
-  const scale = useTransform(progress, range, [1, targetScale]);
-
+const Index = ({ title, description, image, link, tags }) => {
   return (
-    <div ref={container} className="cardContainer overflow-hidden">
-      <MotionCard
-        style={{
-          scale,
-          top: `calc(-10% + ${i * 30}px)`,
-        }}
-        className={`card max-w-3xl border-zinc-700 border overflow-hidden`}
-      >
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-0">
-          <CardContent
-            className={`p-6 flex flex-col justify-between order-2 md:order-1`}
-          >
-            <div>
-              <h3 className="text-xl font-semibold">{title}</h3>
-              <p className="my-4 text-sm leading-tight">{description}</p>
-              <ul className="my-5">
-                {Array.isArray(details) &&
-                  details.map((detail, idx) => (
-                    <li
-                      key={idx}
-                      className="text-sm text-muted-foreground flex items-center my-2"
-                    >
-                      <FaRegCircleCheck className="shrink-0 mr-2" />
-                      <span className="whitespace-break-spaces">{detail}</span>
-                    </li>
-                  ))}
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                {Array.isArray(tags) &&
-                  tags.map((tag, tidx) => (
-                    <div
-                      className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium ring-1 ring-inset ring-gray-500/10"
-                      key={tidx}
-                    >
-                      {tag}
-                    </div>
-                  ))}
-              </div>
-            </div>
-            <CardFooter className="pt-4 text-foreground">
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm hover:underline"
-              >
-                <FaGithub className="-ml-6 size-4" />
-                View on Github
-              </a>
-            </CardFooter>
-          </CardContent>
-          {/* Image Section */}
-          <div className="imageContainer relative w-full h-full order-1 md:order-2">
-            <motion.div
-              style={{ opacity: scrollYProgress, scale: imageScale }}
-              className="w-full h-full"
-            >
-              <img
-                src={image}
-                alt={title}
-                className="object-cover w-full h-full rounded"
-              />
-            </motion.div>
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative rounded-[28px] bg-[#E3E6E4] hover:bg-[#D7DDD7] transition-all duration-300 overflow-hidden h-[340px] flex flex-col justify-between p-6 border border-neutral-300/40 shadow-xs hover:shadow-2xl cursor-pointer"
+    >
+      {/* Center Screenshot Container */}
+      <div className="flex-1 flex items-center justify-center relative p-3 overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="object-contain max-h-[200px] w-auto rounded-xl shadow-md transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      {/* Bottom Row / Hover Banner Area */}
+      <div className="relative w-full mt-auto pt-2">
+        <div className="flex items-center justify-between w-full relative z-10">
+          {/* Project Title Banner (Reveals on Hover) */}
+          <div className="flex-1 mr-3 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-[#729B7D] text-[#111111] font-bold px-5 py-3 rounded-2xl text-sm sm:text-base font-oxanium shadow-sm truncate">
+            {title}
+          </div>
+
+          {/* Circular Arrow Button */}
+          <div className="w-12 h-12 shrink-0 rounded-full bg-[#729B7D] text-[#111111] group-hover:bg-[#111111] group-hover:text-[#729B7D] flex items-center justify-center transition-all duration-300 shadow-md ml-auto">
+            <FiArrowUpRight className="text-2xl transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
         </div>
-      </MotionCard>
-    </div>
+      </div>
+    </a>
   );
 };
 
