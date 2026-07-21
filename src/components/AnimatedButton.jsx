@@ -21,7 +21,7 @@ export default function AnimatedButton({
       whileHover: { scale: 1.05 },
     },
     underline: {
-      whileHover: { color: "#3b82f6" },
+      whileHover: { color: "#34d399" },
     },
   };
 
@@ -34,8 +34,8 @@ export default function AnimatedButton({
       className={clsx(
         baseClasses,
         variant === "gradient"
-          ? "bg-blue-600 text-white"
-          : "bg-white border border-gray-300 text-gray-800",
+          ? "bg-emerald-accent text-background"
+          : "bg-card border border-border text-foreground",
         className
       )}
       {...props}
@@ -56,7 +56,7 @@ export default function AnimatedButton({
       {/* Underline effect */}
       {variant === "underline" && (
         <motion.div
-          className="absolute bottom-1 left-0 h-0.5 bg-blue-500"
+          className="absolute bottom-1 left-0 h-0.5 bg-emerald-accent"
           initial={{ width: 0 }}
           whileHover={{ width: "100%" }}
           transition={{ duration: 0.3 }}

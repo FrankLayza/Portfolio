@@ -1,5 +1,5 @@
 // import { Moon, Sun } from "lucide-react";
-import {FaMoon, FaSun} from "react-icons"
+import {FaMoon, FaSun} from "react-icons/fa"
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { useCallback } from "react";

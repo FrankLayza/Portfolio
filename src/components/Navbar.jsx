@@ -1,88 +1,92 @@
 import { Link } from "react-scroll";
-import { IoMenu } from "react-icons/io5";
-import { useState } from "react";
-import {ModeToggle} from "@/components/toggle-mode"
+import { useState, useEffect } from "react";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
+import { FiDownload } from "react-icons/fi";
+import { useTheme } from "@/components/theme-provider";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [timeStr, setTimeStr] = useState("");
 
-  const toggler = () => setOpen((prev) => !prev);
-  const closeMenu = () => setOpen(false);
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date();
+      setTimeStr(
+        now.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
+        })
+      );
+    };
+    updateClock();
+    const interval = setInterval(updateClock, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <>
-      <nav className="fixed top-0 left-0 w-full z-50 font-bold font-fira">
-        <div className="flex items-center justify-between max-w-2xl w-full mx-auto px-5 border bg-card py-1.5 my-5 text-foreground rounded-4xl">
-          <p className="text-xl">Frank Anthony</p>
-
-          {/* Desktop Nav */}
-          <ul className="hidden md:flex gap-6 px-5">
-            <li className="cursor-pointer hover:underline">
-              <Link to="home" smooth={true} duration={500} offset={0} >
-                Home
-              </Link>
-            </li>
-            <li className="cursor-pointer px-4 hover:underline rounded-2xl">
-              <Link to="projects" smooth={true} duration={500}>
-                Projects
-              </Link>
-            </li>
-            <li className="cursor-pointer hover:underline">
-              <Link to="skills" smooth={true} duration={500}>
-                Skills
-              </Link>
-            </li>
-          </ul>
-          <div className="flex justify-between items-center">
-            <ModeToggle />
-            {/* Mobile Menu Toggle */}
-            <div className="md:hidden">
-              <button className="p-1.5 cursor-pointer" onClick={toggler}>
-                <IoMenu className="text-3xl" />
-              </button>
-            </div>
+    <nav className="fixed top-0 left-0 w-full z-50 font-oxanium py-4 px-4 sm:px-8 bg-[#111111]/90 backdrop-blur-md border-b border-white/5">
+      <div className="flex items-center justify-between max-w-6xl mx-auto w-full">
+        {/* Brand / Logo (Left) */}
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="flex items-center gap-2.5 cursor-pointer group"
+        >
+          {/* Custom Nunio-like Dual Circle Icon */}
+          <div className="flex items-center gap-1">
+            <span className="w-4 h-4 rounded-full bg-[#729B7D]" />
+            <span className="w-5 h-5 rounded-full bg-[#729B7D]/70 -ml-2" />
           </div>
+          <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-white group-hover:text-[#729B7D] transition-colors">
+            Anthony
+          </span>
+        </Link>
+
+        {/* Center Metadata Badges (Hidden on mobile) */}
+        <div className="hidden md:flex items-center gap-3">
+          <span className="px-3.5 py-1.5 rounded-full bg-[#1c1c1c] border border-white/10 text-xs font-semibold text-neutral-300">
+            Lagos / Remote
+          </span>
+          <span className="px-4 py-1.5 rounded-full bg-[#1c1c1c] border border-white/10 text-xs font-mono font-semibold text-white tracking-wide min-w-[95px] text-center">
+            {timeStr || "12:00:00 PM"}
+          </span>
+          <span className="px-3.5 py-1.5 rounded-full bg-[#1c1c1c] border border-white/10 text-xs font-semibold text-neutral-300 flex items-center gap-1">
+            <span>72°F</span>
+            <span className="text-amber-400">☀️</span>
+          </span>
         </div>
 
-        {/* Mobile Menu Dropdown */}
-        {open && (
-          <div className="md:hidden py-6 px-5 rounded-2xl mx-5 border bg-card text-foreground animate-slideDown">
-            <ul className="flex flex-col gap-4 text-lg">
-              <li className="cursor-pointer hover:underline">
-                <Link
-                  to="home"
-                  smooth={true}
-                  duration={500}
-                  onClick={closeMenu}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="cursor-pointer hover:underline">
-                <Link
-                  to="projects"
-                  smooth={true}
-                  duration={500}
-                  onClick={closeMenu}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li className="cursor-pointer hover:underline">
-                <Link
-                  to="skills"
-                  smooth={true}
-                  duration={500}
-                  onClick={closeMenu}
-                >
-                  Skill
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
-      </nav>
-    </>
+        {/* Right Action Items */}
+        <div className="flex items-center gap-3">
+          {/* Theme Toggle Button */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2.5 rounded-full bg-[#1c1c1c] border border-white/10 text-white hover:bg-[#282828] transition-colors cursor-pointer"
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? (
+              <IoSunnyOutline className="text-lg text-amber-300" />
+            ) : (
+              <IoMoonOutline className="text-lg text-neutral-200" />
+            )}
+          </button>
+
+          {/* My Resume CTA */}
+          <a
+            href="https://github.com/FrankLayza"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#222222] hover:bg-[#2c2c2c] text-white border border-white/10 text-xs sm:text-sm font-semibold transition-all shadow-md cursor-pointer"
+          >
+            <span>My Resume</span>
+            <FiDownload className="text-xs opacity-80" />
+          </a>
+        </div>
+      </div>
+    </nav>
   );
 };
 
