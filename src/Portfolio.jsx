@@ -1,7 +1,7 @@
 // Frank Anthony — Minimal Portfolio
 // All styles expressed as Tailwind v4 utility classes.
 // Named groups: group/list (project dim), group/project (arrow), group/contact (contact arrow)
-
+import { ArrowUpRightIcon } from "./components/ui/arrow-up-right";
 export default function Portfolio() {
   const projects = [
     {
@@ -123,7 +123,7 @@ export default function Portfolio() {
                     group-hover/project:text-ink
                   "
                 >
-                  ↗
+                  <ArrowUpRightIcon />
                 </span>
               </div>
 
@@ -192,7 +192,7 @@ export default function Portfolio() {
                   group-hover/contact:text-ink
                 "
               >
-                ↗
+                <ArrowUpRightIcon />
               </span>
             </a>
           ))}

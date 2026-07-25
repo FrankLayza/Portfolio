@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Frank Anthony — Fullstack developer, frontend-heavy. Building on Solana, Monad, and Zama FHE. Based in Lagos, Nigeria." />
     <title>Frank Anthony — Fullstack Developer</title>
+    <!-- Anti-flash: apply saved theme before React renders -->
+    <script>
+      (function () {
+        var stored = localStorage.getItem('portfolio-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

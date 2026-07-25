@@ -17,6 +17,17 @@
   --font-mono:   'JetBrains Mono', monospace;
 }
 
+/* ===== Dark Mode — class-based via .dark on <html> ===== */
+/* Overriding CSS vars propagates to all utility classes automatically */
+@variant dark (&:where(.dark, .dark *));
+
+.dark {
+  --color-ink:   #F0F0F0;
+  --color-paper: #0A0A0A;
+  --color-line:  #1E1E1E;
+  --color-grey:  #666666;
+}
+
 /* ===== Base / Global ===== */
 html {
   scroll-behavior: smooth;
