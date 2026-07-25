@@ -1,5 +1,5 @@
 /* ===== Frank Anthony Portfolio — Design Tokens =====
-   All component styles have been moved to Portfolio.jsx as Tailwind v4 utilities.
+   All component styles have been moved to components as Tailwind v4 utilities.
    This file: Tailwind import, @theme tokens, and base/global rules only.
    ===================================================== */
 
@@ -52,6 +52,15 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--color-ink);
   outline-offset: 3px;
+}
+
+/* Utility to hide scrollbars on mobile horizontal scrolling elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* ===== Accessibility ===== */

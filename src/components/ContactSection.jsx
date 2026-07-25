@@ -3,8 +3,8 @@ import { ArrowUpRightIcon } from "./ui/arrow-up-right";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-14 max-[560px]:py-10">
-      <div className="text-[12px] tracking-[0.08em] uppercase text-grey mb-8">
+    <section id="contact" className="py-10 sm:py-14 border-b sm:border-b-0 border-line">
+      <div className="text-xs tracking-[0.08em] uppercase text-grey mb-6 sm:mb-8">
         Contact
       </div>
 
@@ -15,15 +15,15 @@ export default function ContactSection() {
             href={c.href}
             className="
               group/contact flex items-center justify-between
-              py-4 border-b border-line last:border-b-0
+              py-3.5 sm:py-4 border-b border-line last:border-b-0
               text-[15px]
               transition-[padding-left] duration-200 ease-in-out
-              hover:pl-2
+              hover:pl-2 active:pl-2
             "
             target={c.href.startsWith("mailto") ? undefined : "_blank"}
             rel={c.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
           >
-            <span className="font-serif text-[17px]">{c.label}</span>
+            <span className="font-serif text-[16px] sm:text-[17px]">{c.label}</span>
             <span
               aria-hidden="true"
               className="
