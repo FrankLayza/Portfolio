@@ -7,8 +7,22 @@ function useTheme() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains('dark');
+    const stored = localStorage.getItem('portfolio-theme');
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const isDark = stored ? stored === 'dark' : mediaQuery.matches;
     setDark(isDark);
+    document.documentElement.classList.toggle('dark', isDark);
+
+    const handleMediaChange = (e) => {
+      if (!localStorage.getItem('portfolio-theme')) {
+        setDark(e.matches);
+        document.documentElement.classList.toggle('dark', e.matches);
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleMediaChange);
+    return () => mediaQuery.removeEventListener('change', handleMediaChange);
   }, []);
 
   const toggle = () => {

@@ -7,19 +7,19 @@ export const PROJECTS = [
   },
   {
     title: "Enveil",
-    href: "https://github.com/FrankLayza",
+    href: "https://enveil.vercel.app",
     desc: "A confidential airdrop dApp using Zama's fully homomorphic encryption. Built for the Zama Developer Program bounty.",
     tag: "Zama FHE · Solidity",
   },
   {
     title: "Gravity Switch",
-    href: "https://github.com/FrankLayza",
+    href: "https://github.com/FrankLayza/aga-switch",
     desc: "A VS Code / Antigravity IDE extension that swaps Google account sessions in seconds, with switch events logged to Monad testnet.",
     tag: "Monad · VS Code Extension",
   },
   {
     title: "LazyDocs",
-    href: "https://github.com/FrankLayza",
+    href: "https://github.com/FrankLayza/lazydocs",
     desc: "A published VS Code extension for generating documentation on the fly. Actively used and maintained on the marketplace.",
     tag: "VS Code Extension · TypeScript",
   },
