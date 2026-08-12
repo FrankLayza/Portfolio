@@ -46,7 +46,8 @@ function ProjectLink({ href, label, ogImage }) {
           side="bottom"
           align="end"
           sideOffset={8}
-          className="w-[320px] aspect-[1200/630] p-0 overflow-hidden rounded-xl bg-[#141416] border border-white/10 shadow-2xl shadow-black/80 relative"
+          collisionPadding={16}
+          className="w-[calc(100vw-2rem)] max-w-[320px] aspect-[1200/630] p-0 overflow-hidden rounded-xl bg-[#141416] border border-white/10 shadow-2xl shadow-black/80 relative"
         >
           {/* Skeleton loading state */}
           {!loaded && (
@@ -102,11 +103,11 @@ export default function ProjectsSection() {
                   {p.title}
                 </a>
 
-                {/* Website / GitHub links — only visible on row hover */}
+                {/* Website / GitHub links — always visible on mobile, hover-revealed on desktop */}
                 <div
                   className="
                     flex items-center gap-4 shrink-0
-                    opacity-0 group-hover/project:opacity-100
+                    opacity-100 sm:opacity-0 sm:group-hover/project:opacity-100
                     transition-opacity duration-200
                   "
                 >
